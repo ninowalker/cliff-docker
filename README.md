@@ -1,6 +1,6 @@
 # cliff-docker
 
-A Docker image for the [CLIFF](http://cliff.mediameter.org/) 2.1.1 geolocation software. 
+A Docker image for the [CLIFF](http://cliff.mediameter.org/) 2.3.0 geolocation software. 
 
 Use
 ---
@@ -12,16 +12,16 @@ and you'll experience errors.**
 Build using
 
 ```
-docker build -t cliff:2.1.1 .
+docker build -t cliff:2.3.0 .
 ```
 
 It is setup to use the default port of `8080`. Run using
 
 ```
-docker run -p "8080:8080" -d cliff:2.1.1
+docker run -p "8080:8080" -d cliff:2.3.0
 ```
 
-The API endpoint for CLIFF is `/CLIFF-2.1.1/parse/text`
+The API endpoint for CLIFF is `/CLIFF-2.3.0/parse/text`
 
 Acknowledgements
 -----------------
