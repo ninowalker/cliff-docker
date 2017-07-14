@@ -1,4 +1,5 @@
-# cliff-docker
+CLIFF-docker
+============
 
 A Docker image for the [CLIFF](http://cliff.mediameter.org/) 2.3.0 geolocation software. 
 
