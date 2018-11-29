@@ -1,32 +1,37 @@
-CLIFF-docker
+CLIFF Docker
 ============
 
-A Docker image for the [CLIFF](http://cliff.mediameter.org/) 2.3.0 geolocation software. 
+The official Docker image for the [CLIFF-CLAVIN](http://cliff.mediameter.org/) geolocation software. 
 
-Use
----
+**Note: CLAVIN, and by extension CLIFF, is very memory hungry due to the geonames index. To properly 
+run, a minimum of 4GB of RAM is necessary. Any less and you'll experience errors.**
 
-**Note: CLAVIN, and by extension CLIFF, is very memory hungry due to the
-geonames index. To properly run, a minimum of 4GB of RAM is necessary. Any less
-and you'll experience errors.**
+Building the Image
+------------------
 
 Build using
 
 ```
-docker build -t cliff:2.3.0 .
+docker build -t cliff:2.4.0 .
 ```
+
+Running the Image
+-----------------
 
 It is setup to use the default port of `8080`. Run using
 
 ```
-docker run -p "8080:8080" -d cliff:2.3.0
+docker run -p "8080:8080" -d cliff:2.4.0
 ```
 
-The API endpoint for CLIFF is `/CLIFF-2.3.0/parse/text`
+You can test it at a URL like:
+
+```
+http://localhost:8080/CLIFF-2.4.0/parse/text?q=This%20is%20some%20text%20about%20New%20York%20City,%20and%20maybe%20about%20Accra%20as%20well,%20and%20maybe%20Boston%20as%20well.
+```
 
 Acknowledgements
 -----------------
 
-This pulls heavily from Andy Halterman's [CLIFF-up](https://github.com/ahalterman/CLIFF-up)
-Vagrant box. You can see his repo for more examples of how to make use of
-CLIFF.
+This is forked from is forked from John Beieler's [cliff-docker](https://github.com/havlicek/cliff-docker),
+which pulls heavily from Andy Halterman's [CLIFF-up](https://github.com/ahalterman/CLIFF-up) Vagrant box.

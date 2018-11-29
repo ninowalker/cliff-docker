@@ -4,11 +4,8 @@ wget https://raw.githubusercontent.com/ahalterman/CLIFF-up/master/tomcat-users.x
 $CATALINA_HOME/bin/startup.sh
 
 echo "Downloading CLIFF..."
-cd; wget https://github.com/c4fcm/CLIFF/releases/download/v2.3.0/CLIFF-2.3.0.war
-mv CLIFF-2.3.0.war /usr/local/tomcat/webapps/
-
-echo "Installing Java and JDK"
-apt-get install -y git openjdk-7-jdk openjdk-7-doc openjdk-7-jre-lib maven
+cd; wget https://github.com/c4fcm/CLIFF/releases/download/v2.4.0/CLIFF-2.4.0.war
+mv CLIFF-2.4.0.war /usr/local/tomcat/webapps/
 
 echo "Downloading CLAVIN..."
 cd; git clone https://github.com/Berico-Technologies/CLAVIN.git
@@ -22,19 +19,15 @@ rm allCountries.zip
 echo "Compiling CLAVIN"
 mvn compile
 
-echo "Building Lucene index of placenames--this is the slow one"
+echo "Building Lucene index of placenames -- this is the slow one"
 MAVEN_OPTS="-Xmx4g" mvn exec:java -Dexec.mainClass="com.bericotech.clavin.index.IndexDirectoryBuilder"
 
-
+echo "Symlink /etc/cliff2 to the new IndexDirectory that was just built"
 mkdir /etc/cliff2
-echo "\n\n"
-echo "THIS IS THE SPOT WHERE THE INDEX DIR GETS COPIED"
-echo "\n\n"
 cp -r IndexDirectory /etc/cliff2/IndexDirectory
 
-cd; cd .m2
-rm settings.xml; wget https://raw.githubusercontent.com/ahalterman/CLIFF-up/master/settings.xml
-
-echo "Move files around and redeploy"
+echo "Start up Tomcat"
 $CATALINA_HOME/bin/shutdown.sh
 $CATALINA_HOME/bin/catalina.sh run
+
+echo "Done! You should try hitting a URL now to see if it works!"
