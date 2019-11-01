@@ -1,11 +1,11 @@
-FROM tomcat:8.0
+FROM tomcat:9.0-jdk11-openjdk
 
 MAINTAINER Rahul Bhargava <rahulb@mit.edu>
 
 ADD . /src
 
 RUN apt-get update
-RUN apt-get install -y git openjdk-7-jdk maven
+RUN apt-get install -y git maven
 
 EXPOSE 8080
 
