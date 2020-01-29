@@ -5,13 +5,13 @@ $CATALINA_HOME/bin/startup.sh
 
 echo "Getting CLIFF..."
 echo "  downloading Cliff WAR file from GitHub"
-cd; wget https://github.com/mitmedialab/CLIFF/releases/download/untagged-d51852ce8297654c74d6/cliff-2.6.0.war
+cd; wget https://github.com/mitmedialab/CLIFF/releases/download/v2.6.0/cliff-2.6.0.war
 mv cliff-2.6.0.war /usr/local/tomcat/webapps/
 echo "  done (copied /usr/local/tomcat/webapps/)"
 
 echo "Building Index..."
 echo "  downloading CLAVIN from GitHub"
-cd; git clone https://github.com/Berico-Technologies/CLAVIN.git
+cd; git clone https://github.com/mitmedialab/CLAVIN.git
 
 echo "  downloading latestplacenames file from Geonames"
 cd CLAVIN
