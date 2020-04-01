@@ -5,8 +5,8 @@ $CATALINA_HOME/bin/startup.sh
 
 echo "Getting CLIFF..."
 echo "  downloading Cliff WAR file from GitHub"
-cd; wget https://github.com/mitmedialab/CLIFF/releases/download/v2.6.0/cliff-2.6.0.war
-mv cliff-2.6.0.war /usr/local/tomcat/webapps/
+cd; wget https://github.com/mitmedialab/CLIFF/releases/download/v2.6.1/cliff-2.6.1.war
+mv cliff-2.6.1.war /usr/local/tomcat/webapps/
 echo "  done (copied /usr/local/tomcat/webapps/)"
 
 #echo "Building Index..."
@@ -36,4 +36,4 @@ echo "Start up Tomcat..."
 $CATALINA_HOME/bin/shutdown.sh
 $CATALINA_HOME/bin/catalina.sh run
 echo "  done - you should try hitting a URL now to see if it works!"
-echo "  try: http://localhost:8080/cliff-2.6.0/parse/text?q=This%20is%20about%20India%20the%20country"
+echo "  try: http://localhost:8080/cliff-2.6.1/parse/text?q=This%20is%20about%20India%20the%20country"
