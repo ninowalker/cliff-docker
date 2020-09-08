@@ -41,5 +41,5 @@ This takes a lot of memory, so if it doesn't work keep an eye on the docker log 
 Acknowledgements
 -----------------
 
-This is forked from is forked from John Beieler's [cliff-docker](https://github.com/havlicek/cliff-docker),
+This is forked from John Beieler's [cliff-docker](https://github.com/havlicek/cliff-docker),
 which pulls heavily from Andy Halterman's [CLIFF-up](https://github.com/ahalterman/CLIFF-up) Vagrant box.
