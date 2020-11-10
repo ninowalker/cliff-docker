@@ -13,8 +13,3 @@ mkdir /etc/cliff2
 mv IndexDirectory /etc/cliff2/IndexDirectory
 export INDEX_PATH="/etc/cliff2/IndexDirectory"
 echo "  set INDEX_PATH to /etc/cliff2/IndexDirectory"
-
-echo "Start up Tomcat..."
-$CATALINA_HOME/bin/catalina.sh run
-echo "  done - you should try hitting a URL now to see if it works!"
-echo "  try: http://localhost:8080/cliff-2.6.1/parse/text?q=This%20is%20about%20India%20the%20country"

@@ -7,7 +7,7 @@ RUN apt-get install -y git maven
 
 EXPOSE 8080
 
-COPY launch.sh /
-RUN chmod +x /launch.sh && /launch.sh
+COPY install.sh /
+RUN chmod +x /install.sh && /install.sh
 
-CMD ["DONE!"]
+CMD ["catalina.sh", "run"]
