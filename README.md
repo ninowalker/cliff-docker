@@ -5,6 +5,26 @@ The official Docker image for the [CLIFF-CLAVIN](http://cliff.mediacloud.org/) g
 
 **Note: CLAVIN, and by extension CLIFF, is very memory hungry due to the geonames index. To properly run, a minimum of 4GB of RAM is necessary. Any less and you'll experience errors.**
 
+Running Via DockerHub
+---------------------
+
+The quickest path to running CLIFF is to fetch the latest release from DockerHub:
+
+```
+docker pull rahulbot/cliff-clavin:2.6.1
+docker run -p 8080:8080 -m 8G -d rahulbot/cliff-clavin:2.6.1
+```
+
+Then just hit a URL like this to see some JSON results:
+
+```
+http://localhost:8080/cliff-2.6.1/parse/text?q=This%20is%20some%20text%20about%20New%20York%20City,%20and%20maybe%20about%20Accra%20as%20well,%20and%20maybe%20Boston%20as%20well.
+```
+
+Notes:
+ * It can take a minute the first time to load everything into memory)
+ * You can use our [official Python API client library](https://pypi.org/project/mediacloud-cliff/) to fetch results programmatically
+
 Building and Running Yourself
 -----------------------------
 
@@ -17,16 +37,10 @@ docker build -t cliff .
 Run it with enough memory, and sticking to port 8080:
 
 ```
-docker run -p 8080:8080 -m 8G -d cliff
+docker run -p 8080:8080 -m 8G cliff
 ```
 
-The first time it runs it will take a while to load all the models and database into memory. You can watch the docker logs to monitor the progress. Web requests won't return anything valid while it is loading.
-
-Once it is loaded, you can test it at a URL like:
-
-```
-http://localhost:8080/cliff-2.6.1/parse/text?q=This%20is%20some%20text%20about%20New%20York%20City,%20and%20maybe%20about%20Accra%20as%20well,%20and%20maybe%20Boston%20as%20well.
-```
+(see the "Notes" section above for how to fetch results)
 
 Debugging
 ---------
@@ -39,14 +53,12 @@ Releasing to Docker Hub
 I build and release this to DockerHub for easier deployment on your server. To release the latest code I run:
 ```
 docker build -t rahulbot/cliff-clavin .
-docker run -p 8080:8080 -m 8G rahulbot/cliff-clavin
 docker push rahulbot/cliff-clavin
 ```
 
 To release a tagged version, I something like this run:
 ```
 docker build -t rahulbot/cliff-clavin:2.6.1 .
-docker run -p 8080:8080 -m 8G rahulbot/cliff-clavin:2.6.1
 docker push rahulbot/cliff-clavin:2.6.1
 ```
 
