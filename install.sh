@@ -7,7 +7,7 @@ mv cliff-2.6.1.war /usr/local/tomcat/webapps/
 echo "  done (copied /usr/local/tomcat/webapps/)"
 
 echo "Downloading pre-built IndexDirectory and putting in /etc/cliff2/"
-cd; wget https://github.com/mediacloud/mediacloud-clavin-build-geonames-index/releases/download/2019-09-06/IndexDirectory.tar.gz
+cd; wget https://github.com/mediacloud/mediacloud-clavin-build-geonames-index/releases/download/2020-11-25/IndexDirectory.tar.gz
 tar xfz IndexDirectory.tar.gz
 mkdir /etc/cliff2
 mv IndexDirectory /etc/cliff2/IndexDirectory
