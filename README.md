@@ -1,7 +1,7 @@
 CLIFF Docker
 ============
 
-The official Docker image for the [CLIFF-CLAVIN](http://cliff.mediacloud.org/) geolocation software. If you want to run this yourself, grab and run the prebuilt image from [the rahulbot/cliff-clavin project on DockerHub](https://hub.docker.com/repository/docker/rahulbot/cliff-clavin/general).
+The official Docker image for the [CLIFF-CLAVIN](http://cliff.mediacloud.org/) geolocation software. If you want to run this yourself, grab and run the prebuilt image from [the rahulbot/cliff-clavin project on DockerHub](https://hub.docker.com/r/rahulbot/cliff-clavin).
 
 **Note: CLAVIN, and by extension CLIFF, is very memory hungry due to the geonames index. To properly run, a minimum of 4GB of RAM is necessary. Any less and you'll experience errors.**
 
