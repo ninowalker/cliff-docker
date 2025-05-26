@@ -1,4 +1,4 @@
-FROM tomcat:9-jdk16-openjdk
+FROM tomcat:9.0-jdk21-corretto
 
 MAINTAINER Rahul Bhargava <r.bhargava@northeastern.edu>
 
