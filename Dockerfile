@@ -2,8 +2,8 @@ FROM tomcat:9.0-jdk21-corretto
 
 MAINTAINER Rahul Bhargava <r.bhargava@northeastern.edu>
 
-RUN apt-get update
-RUN apt-get install -y git maven
+RUN yum update -y
+RUN yum install -y git maven
 
 EXPOSE 8080
 
